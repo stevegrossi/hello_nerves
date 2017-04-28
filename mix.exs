@@ -55,8 +55,11 @@ defmodule HelloNerves.Mixfile do
   # Specify target specific dependencies
   def deps("host"), do: []
   def deps(target) do
-    [{:nerves_runtime, "~> 0.1.0"},
-     {:"nerves_system_#{target}", "~> 0.11.0", runtime: false}]
+    [
+      {:nerves_runtime, "~> 0.1.0"},
+      {:"nerves_system_#{target}", "~> 0.11.0", runtime: false},
+      {:elixir_ale, "~> 0.5.7"}
+    ]
   end
 
   # We do not invoke the Nerves Env when running on the Host
