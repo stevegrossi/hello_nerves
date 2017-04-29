@@ -60,7 +60,9 @@ defmodule HelloNerves.Mixfile do
       {:nerves_runtime, "~> 0.1.0"},
       {:"nerves_system_#{target}", "~> 0.11.0", runtime: false},
       {:elixir_ale, "~> 0.5.7"},
-      {:nerves_interim_wifi, "~> 0.2.0"}
+      {:nerves_interim_wifi, "~> 0.2.0"},
+      {:cowboy, "~> 1.0.0"},
+      {:plug, "~> 1.0"}
     ]
   end
 
