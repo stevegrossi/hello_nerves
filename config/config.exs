@@ -8,6 +8,11 @@ use Mix.Config
 config :logger, level: :debug
 config :hello_nerves, :led_pin, 26
 
+config :hello_nerves, :wlan0,
+  ssid: "Network Name",
+  key_mgmt: :"WPA-PSK", # :NONE if no password
+  psk: "password"
+
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 # Uncomment to use target specific configurations
