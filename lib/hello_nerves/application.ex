@@ -14,7 +14,9 @@ defmodule HelloNerves.Application do
     children = [
       worker(Task, [fn -> init_kernel_modules() end], restart: :transient, id: Nerves.Init.KernelModules),
       worker(Task, [fn -> init_network() end], restart: :transient, id: Nerves.Init.Network),
-      Plug.Adapters.Cowboy.child_spec(:http, HelloNerves.Router, [], [port: 4000])
+      Plug.Adapters.Cowboy.child_spec(:http, HelloNerves.Router, [], [port: 4000]),
+      worker(HelloNerves.Store, []),
+      worker(HelloNerves.Blinker, [])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
