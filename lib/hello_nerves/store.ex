@@ -1,10 +1,13 @@
 defmodule HelloNerves.Store do
 
+  require Logger
+
   @defaults %{
     blink_ms: 1000
   }
 
   def start_link do
+    Logger.debug "Initializing store"
     Agent.start_link(fn -> @defaults end, name: __MODULE__)
   end
 

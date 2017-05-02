@@ -62,7 +62,12 @@ defmodule HelloNerves.Mixfile do
       {:elixir_ale, "~> 0.5.7"},
       {:nerves_interim_wifi, "~> 0.2.0"},
       {:cowboy, "~> 1.0.0"},
-      {:plug, "~> 1.0"}
+      {:plug, "~> 1.0"},
+      {:extwitter, "~> 0.8"},
+      {:httpoison, "~> 0.11"},
+      # Why must I specify these?
+      {:oauther, "~> 1.1.0"},
+      {:poison, "~> 2.2.0"},
     ]
   end
 
